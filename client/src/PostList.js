@@ -5,7 +5,7 @@ import CommantList from './CommentList'
 export default function PostList() {
     const[posts,setPosts]=useState({})
     const fetchPosts = async()=>{
-        const res = await axios.get('http://localhost:4000/posts')
+        const res = await axios.get('localhost:4000/')
         setPosts(res.data)
     }
     useEffect(()=>{
@@ -13,7 +13,7 @@ export default function PostList() {
     },[])
     
    const renderPosts = Object.keys(posts).map(post=>{
-       console.log(posts[post].title.id)
+       console.log(posts[post].id)
        return <div className='card' style={{width:'30%',marginBottom:'20px'}}
        key={post.id}
        >

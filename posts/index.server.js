@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const axios =require('axios')
 const bodyParser=require('body-parser')
 const {randomBytes}=require('crypto')
 const app = express()
@@ -12,12 +13,12 @@ app.get('/',(req,res)=>{
 
 app.post('/',(req,res)=>{
     const id = randomBytes(4).toString('hex')
-    const title = req.body
+    const title = req.body.title
     posts[id]= {
         id,
         title
     }
-
+    axios.post('localhost:4005/events')
     res.status(201).send(posts[id])
 })
 
