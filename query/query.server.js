@@ -24,6 +24,6 @@ if(type==='commentCreated'){
 }
 res.send({})
 })
-app.listen(4003,()=>{
-    console.log('listenning in port 4003')
+app.listen(4002,()=>{
+    console.log('listenning in port 4002')
 })
