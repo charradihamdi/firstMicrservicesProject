@@ -1,0 +1,17 @@
+kind: Service
+metadata:
+   name: posts
+spec:
+   containers:
+   – name: posts
+     image: stephengrider/posts
+**
+apiVersion: v1
+kind: Pod
+metadata:
+  name: posts
+spec:
+  containers:
+    - name: posts
+      image: stephengrider/posts:0.0.1
+       
